@@ -1,0 +1,46 @@
+{
+  "name": "一点点订单检查",
+  "version": "1.0",
+  "minimum_chrome_version": "10.0",
+  "description": "检查订单是否正常",
+  "devtools_page": "index.html",
+  "content_scripts": [
+    {
+      "matches": [
+       "https://*.alipay.com/*"
+      ],
+      "js": [
+        "js/html2canvas.js",
+        "js/background.js",
+        "js/jquery-3.3.1.min.js"
+      ]
+    }
+  ],
+  "background": { "scripts": [
+    "js/html2canvas.js",
+    "js/background.js",
+    "js/jquery-3.3.1.min.js"
+    ]
+  },
+  "permissions": [
+    "contextMenus",
+    "tabs",
+    "notifications",
+    "webRequest",
+    "webRequestBlocking",
+    "storage",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "browser_action": {
+    "default_icon": "static/img/48.png",
+    "default_popup": "index.html",
+    "default_title": "一点点订单检查"
+  },
+  "manifest_version": 2,
+  "icons": {
+    "128": "static/img/128.png",
+    "16": "static/img/16.png",
+    "48": "static/img/48.png"
+  }
+}
